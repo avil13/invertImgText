@@ -13,6 +13,14 @@ body{
     margin:10px auto;
 }
 
+.content:after {
+    clear:both;
+display:block;
+content:'.';
+height:0;
+font-size:0;
+}
+
 .patt-container{
     float:left;
     width:370px;
