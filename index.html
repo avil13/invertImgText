@@ -8,28 +8,44 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="Diff_imgText.js"></script>
+    <script src="jImgText.js"></script>
     <script>
     </script>
 </head>
 
 <body>
 
-    <div class="container" id="patt1">
-        Lorem ipsum dolor sit amet.
+    <div class="content">
+        <div class="patt-container" id="patt1">
+            Lorem ipsum dolor sit amet.
+        </div>
+
+        <div class="patt-container" id="patt2">
+            Lorem ipsum dolor sit amet.
+        </div>
+
+        <div class="patt-container" id="patt3">
+            Lorem ipsum dolor sit amet.
+        </div>
+
+        <div class="patt-container" id="patt4">
+            Lorem ipsum dolor sit amet.
+        </div>
+
+        <div class="patt-container" id="patt5">
+            Lorem ipsum dolor sit amet.
+        </div>
+
+        <div class="patt-container" id="patt6">
+            Lorem ipsum dolor sit amet.
+        </div>
     </div>
 
-    <div class="container" id="patt2">
-        Lorem ipsum dolor sit amet.
-    </div>
-
-    <div class="container" id="patt3">
-        Lorem ipsum dolor sit amet.
-    </div>
-
-    <div class="container" id="patt4">
-        Lorem ipsum dolor sit amet.
-    </div>
+    <script>
+    jQuery(document).ready(function($) {
+        $('.patt-container').jIimgText();
+    });
+    </script>
 
 </body>
 

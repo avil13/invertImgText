@@ -1,20 +1,12 @@
 (function($) {
-    $.fn.Diff_imgText = function(img) {
+    $.fn.jIimgText = function(imgSrc) {
 
         if (this === undefined) {
             return ("error");
         }
 
         var $t = $(this);
-        var getImage = new Image();
 
-        getImage.onload = function() {
-            var rgb = getAverageColourAsRGB(getImage),
-                color = 'rgb(' + (255 - rgb.r) + ', ' + (255 - rgb.g) + ', ' + (255 - rgb.b) + ')',
-                style = '';
-
-            $t.attr('style', ' color: ' + color + ';');
-        };
 
 
         // получение id
@@ -26,18 +18,35 @@
             }
         };
 
-        var imgLink = function(el) {
-            var style = window.getComputedStyle(el),
-                img = imgUrl(style.backgroundImage);
-
-            if (img) {
-                getImage.src = img;
-            }
-        };
 
 
         $.each($t, function(i, j) {
-            imgLink(j);
+
+            var getImage = new Image();
+
+            var imgLink = function(el) {
+                var style = window.getComputedStyle(el),
+                    img = imgUrl(style.backgroundImage);
+
+                if (img) {
+                    getImage.src = img;
+                }
+            };
+
+
+            getImage.onload = function() {
+                var rgb = getAverageColourAsRGB(getImage),
+                    color = 'rgb(' + (255 - rgb.r) + ', ' + (255 - rgb.g) + ', ' + (255 - rgb.b) + ')',
+                    style = '';
+
+                $(j).attr('style', ' color: ' + color + ';');
+            };
+
+            if (imgSrc === undefined) {
+                imgLink(j);
+            } else {
+                getImage.src = imgSrc;
+            }
         });
 
 
@@ -96,9 +105,3 @@
         return this;
     };
 })(jQuery);
-
-
-
-jQuery(document).ready(function($) {
-    $('.container').Diff_imgText();
-});
