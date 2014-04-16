@@ -1,20 +1,20 @@
-jImgText
+invertImgText
 ========
 
-jQuery plugin - diff text color
+jQuery plugin - change text color
 
 This plugin inverts the color of the text by taking the background image
 
 
 ```JS
 // get background image on this block
-$('.patt-container').jIimgText();
+$('.patt-container').invertImgText();
 ```
 
 or
 
 ```JS
-$('.patt-container').jIimgText('/path/to/img.jpg');
+$('.patt-container').invertImgText('/path/to/img.jpg');
 ```
 
 
