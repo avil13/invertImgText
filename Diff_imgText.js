@@ -1,37 +1,45 @@
 (function($) {
-    $.fn.jDiff_imgText = function(img) {
+    $.fn.Diff_imgText = function(img) {
 
-        if (this === undefined || img === undefined) {
+        if (this === undefined) {
             return ("error");
         }
 
         var $t = $(this);
         var getImage = new Image();
 
-        if (img.src !== undefined) {
-            // переданный параметр, это DOM объект
-            getImage = img;
-        } else {
-            // переданный параметр это строка
-            getImage.src = img;
-        }
-
-
         getImage.onload = function() {
             var rgb = getAverageColourAsRGB(getImage),
                 color = 'rgb(' + (255 - rgb.r) + ', ' + (255 - rgb.g) + ', ' + (255 - rgb.b) + ')',
                 style = '';
 
-            if ($t.attr('style')) {
-                style = $t.attr('style');
-            }
-
-            if ()
-
-
-                $t.attr('style', ' color: ' + color + ';' + style);
-
+            $t.attr('style', ' color: ' + color + ';');
         };
+
+
+        // получение id
+        var imgUrl = function(str) {
+            if (str) {
+                return str.replace('url(', '').replace(')', '');
+            } else {
+                return false;
+            }
+        };
+
+        var imgLink = function(el) {
+            var style = window.getComputedStyle(el),
+                img = imgUrl(style.backgroundImage);
+
+            if (img) {
+                getImage.src = img;
+            }
+        };
+
+
+        $.each($t, function(i, j) {
+            imgLink(j);
+        });
+
 
 
         var getAverageColourAsRGB = function(img) {
@@ -84,20 +92,13 @@
         };
 
 
-        // получение id
-        var hasColor = function(str) {
-            var re = /color:(.+);/g;
-            var myArray = re.exec(str);
-
-            if (myArray && myArray[1]) {
-                return myArray[1];
-            } else {
-                return false;
-            }
-        };
-
-
 
         return this;
     };
 })(jQuery);
+
+
+
+jQuery(document).ready(function($) {
+    $('.container').Diff_imgText();
+});

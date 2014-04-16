@@ -17,3 +17,23 @@ body{
     padding:50px;
     text-align:center;
 }
+
+
+#patt1{
+    background: url('img/congruent_outline.png') 50% 0 repeat;
+}
+
+#patt2{
+    background: url('img/bo_play_pattern.png') 50% 0 repeat;
+}
+
+#patt3{
+    background: url('img/food.png') 50% 0 repeat;
+}
+
+#patt4{
+    background: url('img/lined_paper.png') 50% 0 repeat;
+}
+
+
+
