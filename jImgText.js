@@ -1,5 +1,5 @@
 (function($) {
-    $.fn.jIimgText = function(imgSrc) {
+    $.fn.invertImgText = function(imgSrc) {
 
         if (this === undefined) {
             return ("error");
