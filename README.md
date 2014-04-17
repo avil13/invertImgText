@@ -5,6 +5,8 @@ jQuery plugin - change text color
 
 This plugin inverts the color of the text by taking the background image
 
+[Demo](http://avil13.github.io/demo/inverImgText/ "demo")
+================
 
 ```JS
 // get background image on this block
