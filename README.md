@@ -1,4 +1,4 @@
-invertImgText
+invertImgText.js
 ========
 
 jQuery plugin - change text color
