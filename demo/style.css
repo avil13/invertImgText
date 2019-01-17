@@ -1,0 +1,36 @@
+.patt{
+    margin-top:10px;
+    font-size: 2em;
+    padding:50px;
+    text-align:center;
+    -webkit-box-shadow:inset 0 0 3px 3px rgba(55,55,55,0.9);
+    box-shadow:inset 0 0 3px 3px rgba(55,55,55,0.9);
+}
+
+
+#patt1{
+    background: url('img/congruent_outline.png') 0 0 repeat;
+}
+
+#patt2{
+    background: url('img/bo_play_pattern.png') 0 0 repeat;
+}
+
+#patt3{
+    background: url('img/food.png') 0 0 repeat;
+}
+
+#patt4{
+    background: url('img/lined_paper.png') 0 0 repeat;
+}
+
+#patt5{
+    background: url('img/congruent_pentagon.png') 0 0 repeat;
+}
+
+#patt6{
+    background: url('img/red.jpg') 0 0 repeat;
+}
+
+
+
